@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "script3.py", line 58, in <module>
+    main()
+  File "script3.py", line 52, in main
+    file =open(sys.argv[1],'r')
+FileNotFoundError: [Errno 2] No such file or directory: '../../datasets/dataset_1000.txt'
+Traceback (most recent call last):
+  File "script3.py", line 58, in <module>
+    main()
+  File "script3.py", line 52, in main
+    file =open(sys.argv[1],'r')
+FileNotFoundError: [Errno 2] No such file or directory: '../../datasets/dataset_3005381.txt'
