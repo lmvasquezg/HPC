@@ -1,42 +1,37 @@
-#include <fstream>
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <cstdlib>
+#include <omp.h>
 
 using namespace std;
+int main(int argc, char *argv[]) {
 
-int main ()
-{
-	int a = 0;
-    int c = 0;
-    int g = 0;
-    int t = 0; 
-	
-    char[1000] dna;
+    ifstream secuence(argv[1]);
 
-	int length;
-	ifstream myfile;
-	ofstream newfile;
-	
-	myfile.open("entrada.txt");
-	newfile.open("salida.txt");
-	
-	myfile >> dna;
+    string dna;
+    getline(secuence, dna);
 
-	length = strlen(dna);
+    double ts = omp_get_wtime();
+    reversed_compliment(dna);
+    double tf = omp_get_wtime();
 
-	for(int i = 0; i < length; i++){
-		if (dna[i] == 'A'){
-			a++;
-		} else if (dna[i] == 'T'){
-			t++;
-		} else if (dna[i] == 'C'){
-			c++;
-		}else if (dna[i] == 'G'){
-			g++;
-		}	
-	}
-	myfile.close();
-	newfile.close();	
-	cout << a <<" " << c << " " << g << " " << t;
-	return 0;
+    cout << "Time in Seconds: " << tf - ts << std::endl;
+    
+    ofstream outputFile;
+    outputFile.open("outputDna.txt");
+    outputFile << dna;
+    outputFile.close();
+
+    return 0;
+}
+
+
+
+void reversed_compliment(string &secuence) {
+    reversed = reverse(secuence.begin(), secuence.end()); 
+    replace( secuence.begin(), secuence.end(), 'A', 'T'); 
+    replace( secuence.begin(), secuence.end(), 'T', 'A'); 
+    replace( secuence.begin(), secuence.end(), 'G', 'C'); 
+    replace( secuence.begin(), secuence.end(), 'C', 'G'); 
 }
