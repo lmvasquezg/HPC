@@ -1,0 +1,46 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Sat May 23 22:59:19 PDT 2020
+#    Job ID:           114073.c008
+#      User:           u43285
+# Resources:           neednodes=1:knl7210,nodes=1:knl7210,walltime=00:02:00
+########################################################################
+
+--- 0.0021944046020507812 seconds  for ../../datasets/dataset_804.txt --- 
+
+--- 0.0023164749145507812 seconds  for ../../datasets/dataset_989.txt --- 
+
+--- 0.003736257553100586 seconds  for ../../datasets/dataset_6000.txt --- 
+
+--- 0.00496363639831543 seconds  for ../../datasets/dataset_10000.txt --- 
+
+--- 0.2962219715118408 seconds  for ../../datasets/dataset_973470.txt --- 
+
+--- 0.7280466556549072 seconds  for ../../datasets/dataset_1162062.txt --- 
+
+--- 0.43666887283325195 seconds  for ../../datasets/dataset_1385802.txt --- 
+
+--- 0.9141888618469238 seconds  for ../../datasets/dataset_3001581.txt --- 
+
+--- 1.721428632736206 seconds  for ../../datasets/dataset_5927724.txt --- 
+
+--- 2.1967270374298096 seconds  for ../../datasets/dataset_7765758.txt --- 
+
+--- 2.606278896331787 seconds  for ../../datasets/dataset_8285706.txt --- 
+
+--- 3.1335597038269043 seconds  for ../../datasets/dataset_11320749.txt --- 
+
+--- 3.4624829292297363 seconds  for ../../datasets/dataset_12154329.txt --- 
+
+--- 4.405736684799194 seconds  for ../../datasets/dataset_15714072.txt --- 
+
+--- 5.462649822235107 seconds  for ../../datasets/dataset_19403505.txt --- 
+
+
+########################################################################
+# Colfax Cluster
+# End of output for job 114073.c008
+# Date: Sat May 23 22:59:48 PDT 2020
+########################################################################
+
