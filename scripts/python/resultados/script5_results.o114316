@@ -1,0 +1,58 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Sun May 24 16:09:32 PDT 2020
+#    Job ID:           114316.c008
+#      User:           u43285
+# Resources:           neednodes=1:knl7210,nodes=1:knl7210,walltime=00:02:00
+########################################################################
+
+--- 0.0028705596923828125 seconds  for ../../datasets/dataset_804.txt --- 
+
+--- 0.006063938140869141 seconds  for ../../datasets/dataset_989.txt --- 
+
+--- 0.004037380218505859 seconds  for ../../datasets/dataset_6000.txt --- 
+
+--- 0.007969379425048828 seconds  for ../../datasets/dataset_10000.txt --- 
+
+--- 0.28803133964538574 seconds  for ../../datasets/dataset_973470.txt --- 
+
+--- 0.35311174392700195 seconds  for ../../datasets/dataset_1162062.txt --- 
+
+--- 0.4183065891265869 seconds  for ../../datasets/dataset_1385802.txt --- 
+
+--- 0.8632283210754395 seconds  for ../../datasets/dataset_3001581.txt --- 
+
+--- 1.658012866973877 seconds  for ../../datasets/dataset_5927724.txt --- 
+
+--- 2.186997652053833 seconds  for ../../datasets/dataset_7765758.txt --- 
+
+--- 2.401066541671753 seconds  for ../../datasets/dataset_8285706.txt --- 
+
+--- 3.269775390625 seconds  for ../../datasets/dataset_11320749.txt --- 
+
+--- 3.4094996452331543 seconds  for ../../datasets/dataset_12154329.txt --- 
+
+--- 4.47788143157959 seconds  for ../../datasets/dataset_15714072.txt --- 
+
+--- 5.302442789077759 seconds  for ../../datasets/dataset_19403505.txt --- 
+
+--- 5.757683753967285 seconds  for ../../datasets/dataset_20000000.txt --- 
+
+--- 8.427912712097168 seconds  for ../../datasets/dataset_30000000.txt --- 
+
+--- 11.781540870666504 seconds  for ../../datasets/dataset_40000000.txt --- 
+
+--- 14.168404817581177 seconds  for ../../datasets/dataset_50000000.txt --- 
+
+--- 17.782918214797974 seconds  for ../../datasets/dataset_60000000.txt --- 
+
+--- 22.49658513069153 seconds  for ../../datasets/dataset_80000000.txt --- 
+
+
+########################################################################
+# Colfax Cluster
+# End of output for job 114316.c008
+# Date: Sun May 24 16:11:45 PDT 2020
+########################################################################
+

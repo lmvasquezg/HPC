@@ -1,19 +1,27 @@
-#PBS -N script5_results
-#PBS -l nodes=1:knl7210
+#PBS -N script2_results
+#PBS -l nodes=1:knl7210  walltime=00:30:00
 cd $PBS_O_WORKDIR
 
-python3 script5.py ../../datasets/dataset_804.txt
-python3 script5.py ../../datasets/dataset_989.txt
-python3 script5.py ../../datasets/dataset_6000.txt
-python3 script5.py ../../datasets/dataset_10000.txt
-python3 script5.py ../../datasets/dataset_973470.txt
-python3 script5.py ../../datasets/dataset_1162062.txt
-python3 script5.py ../../datasets/dataset_1385802.txt
-python3 script5.py ../../datasets/dataset_3001581.txt
-python3 script5.py ../../datasets/dataset_5927724.txt
-python3 script5.py ../../datasets/dataset_7765758.txt
-python3 script5.py ../../datasets/dataset_8285706.txt
-python3 script5.py ../../datasets/dataset_11320749.txt
-python3 script5.py ../../datasets/dataset_12154329.txt
-python3 script5.py ../../datasets/dataset_15714072.txt
-python3 script5.py ../../datasets/dataset_19403505.txt
+python3 script2.py ../../datasets/dataset_804.txt
+python3 script2.py ../../datasets/dataset_989.txt
+python3 script2.py ../../datasets/dataset_6000.txt
+python3 script2.py ../../datasets/dataset_10000.txt
+python3 script2.py ../../datasets/dataset_973470.txt
+python3 script2.py ../../datasets/dataset_1162062.txt
+python3 script2.py ../../datasets/dataset_1385802.txt
+python3 script2.py ../../datasets/dataset_3001581.txt
+python3 script2.py ../../datasets/dataset_5927724.txt
+python3 script2.py ../../datasets/dataset_7765758.txt
+python3 script2.py ../../datasets/dataset_8285706.txt
+python3 script2.py ../../datasets/dataset_11320749.txt
+python3 script2.py ../../datasets/dataset_12154329.txt
+python3 script2.py ../../datasets/dataset_15714072.txt
+python3 script2.py ../../datasets/dataset_19403505.txt
+python3 script2.py ../../datasets/dataset_20000000.txt
+python3 script2.py ../../datasets/dataset_30000000.txt
+python3 script2.py ../../datasets/dataset_40000000.txt
+python3 script2.py ../../datasets/dataset_50000000.txt
+python3 script2.py ../../datasets/dataset_60000000.txt
+python3 script2.py ../../datasets/dataset_80000000.txt    
+python3 script2.py ../../datasets/dataset_100000000.txt
+ 

@@ -1,0 +1,60 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Sun May 24 16:11:47 PDT 2020
+#    Job ID:           114318.c008
+#      User:           u43285
+# Resources:           neednodes=1:knl7210,nodes=1:knl7210,walltime=00:02:00
+########################################################################
+
+--- 0.0023512840270996094 seconds  for ../../datasets/dataset_804.txt --- 
+
+--- 0.002389192581176758 seconds  for ../../datasets/dataset_989.txt --- 
+
+--- 0.0025496482849121094 seconds  for ../../datasets/dataset_6000.txt --- 
+
+--- 0.0058481693267822266 seconds  for ../../datasets/dataset_10000.txt --- 
+
+--- 0.05818581581115723 seconds  for ../../datasets/dataset_973470.txt --- 
+
+--- 0.0698385238647461 seconds  for ../../datasets/dataset_1162062.txt --- 
+
+--- 0.08072614669799805 seconds  for ../../datasets/dataset_1385802.txt --- 
+
+--- 0.1602954864501953 seconds  for ../../datasets/dataset_3001581.txt --- 
+
+--- 0.30235719680786133 seconds  for ../../datasets/dataset_5927724.txt --- 
+
+--- 0.3923676013946533 seconds  for ../../datasets/dataset_7765758.txt --- 
+
+--- 0.4156508445739746 seconds  for ../../datasets/dataset_8285706.txt --- 
+
+--- 0.5636677742004395 seconds  for ../../datasets/dataset_11320749.txt --- 
+
+--- 0.6009149551391602 seconds  for ../../datasets/dataset_12154329.txt --- 
+
+--- 0.7768526077270508 seconds  for ../../datasets/dataset_15714072.txt --- 
+
+--- 0.9521543979644775 seconds  for ../../datasets/dataset_19403505.txt --- 
+
+--- 0.9811997413635254 seconds  for ../../datasets/dataset_20000000.txt --- 
+
+--- 1.462730884552002 seconds  for ../../datasets/dataset_30000000.txt --- 
+
+--- 1.9685158729553223 seconds  for ../../datasets/dataset_40000000.txt --- 
+
+--- 2.5833592414855957 seconds  for ../../datasets/dataset_50000000.txt --- 
+
+--- 2.946223258972168 seconds  for ../../datasets/dataset_60000000.txt --- 
+
+--- 3.922849655151367 seconds  for ../../datasets/dataset_80000000.txt --- 
+
+--- 4.883581638336182 seconds  for ../../datasets/dataset_100000000.txt --- 
+
+
+########################################################################
+# Colfax Cluster
+# End of output for job 114318.c008
+# Date: Sun May 24 16:12:15 PDT 2020
+########################################################################
+
