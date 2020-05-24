@@ -1,34 +1,23 @@
-# FUENTE: https://www.biostars.org/p/90/
+# FUENTE: http://rosalind.info/problems/revc/solutions/?page=3
+import time
+import sys
 
-#
-# Reverse complement example with BioPython
-#
+def getSeqRev(s):
+    s_temp = ''
+    for i in s:
+        if i == 'A':
+            s_temp += 'T'
+        elif i == 'G':
+            s_temp += 'C'
+        elif i == 'C':
+            s_temp += 'G'
+        elif i == 'T':
+            s_temp += 'A'
+        else:
+            s_temp += 'N'
+    #print s_temp[::-1]
 
-from Bio.Seq import Seq
-
-# a separate function to reverse strings (or other iterables)
-def rev(it):
-    "Reverses an interable and returns it as a string"
-    return ''.join(reversed(it))
-
-# create a Seq class instance
-dna = Seq("ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG")
-
-# original DNA
-print(type(dna))
-print(dna)
-
-# reverse complement DNA, returns a new sequence
-print(dna.reverse_complement())
-
-# currently there is no direct way to just reverse a sequence
-# we need to do a little extra work
-
-rseq = rev(str(dna))
-rdna = Seq(rseq)
-
-# reversed sequence
-print(rdna)
-
-# to complement DNA, returns a new sequence
-print(dna.complement())
+start_time = time.time()
+file =open(sys.argv[1],'r')
+getSeqRev(file.read())
+print("--- %s seconds  for %s --- \n" % (time.time() - start_time, sys.argv[1]))

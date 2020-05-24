@@ -6,7 +6,8 @@ Description: Python reverese complement program that prompts user to input
 valid DNA sequence, only exits when invalid character is entered.
 """
 # Add functions here
-
+import time
+import sys
 
 def is_seq_valid(seq):
     """Returns True if sequence is DNA otherwise False"""
@@ -24,7 +25,7 @@ def reverse(seq):
 
 def complement(seq):
     """Returns a complement DNA sequence"""
-    complement_dict = {'A': 'T', 'C': 'G', 'T': 'A', 'G': 'C'}
+    complement_dict = {'A': 'T', 'C': 'G', 'T': 'A', 'G': 'C','\n':''}
     seq_list = list(seq)
     # I can think of 3 ways to do this but first is faster I think ???
     # first list comprehension
@@ -47,16 +48,10 @@ def reverse_complement(seq):
 
 
 def main():
-    print('**********************Reverse Complement Program**********************')
-    # Prompt user here
-    sequence = input("Please enter an oligonucleotide sequence: ").upper()
-
-    # Loop until invalid char
-    while (is_seq_valid(sequence)):
-        print('Original sequence: ' + sequence)
-        print('Reverse complement sequence: ' + reverse_complement(sequence))
-        sequence = input("Please enter an oligonucleotide sequence: ").upper()
-    print('######################################################################')
+    start_time = time.time()
+    file =open(sys.argv[1],'r')
+    reverse_complement(file.read())
+    print("--- %s seconds  for %s --- \n" % (time.time() - start_time, sys.argv[1]))
 
 
 if __name__ == '__main__':
