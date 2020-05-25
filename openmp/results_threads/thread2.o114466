@@ -1,0 +1,38 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Sun May 24 19:40:18 PDT 2020
+#    Job ID:           114466.c008
+#      User:           u43285
+# Resources:           neednodes=1:knl7210,nodes=1:knl7210,walltime=00:02:00
+########################################################################
+
+Time in Seconds: 0.0441198 for ../../datasets/dataset_804.txt
+Time in Seconds: 0.0435929 for ../../datasets/dataset_989.txt
+Time in Seconds: 0.0396209 for ../../datasets/dataset_6000.txt
+Time in Seconds: 0.036907 for ../../datasets/dataset_10000.txt
+Time in Seconds: 0.040257 for ../../datasets/dataset_973470.txt
+Time in Seconds: 0.0388639 for ../../datasets/dataset_1162062.txt
+Time in Seconds: 0.0374441 for ../../datasets/dataset_1385802.txt
+Time in Seconds: 0.037359 for ../../datasets/dataset_3001581.txt
+Time in Seconds: 0.037672 for ../../datasets/dataset_5927724.txt
+Time in Seconds: 0.037262 for ../../datasets/dataset_7765758.txt
+Time in Seconds: 0.036824 for ../../datasets/dataset_8285706.txt
+Time in Seconds: 0.0367279 for ../../datasets/dataset_11320749.txt
+Time in Seconds: 0.0366919 for ../../datasets/dataset_12154329.txt
+Time in Seconds: 0.0363252 for ../../datasets/dataset_15714072.txt
+Time in Seconds: 0.0365911 for ../../datasets/dataset_19403505.txt
+Time in Seconds: 0.0368531 for ../../datasets/dataset_20000000.txt
+Time in Seconds: 0.0367391 for ../../datasets/dataset_30000000.txt
+Time in Seconds: 0.0368249 for ../../datasets/dataset_40000000.txt
+Time in Seconds: 0.03653 for ../../datasets/dataset_50000000.txt
+Time in Seconds: 0.036267 for ../../datasets/dataset_60000000.txt
+Time in Seconds: 0.0365579 for ../../datasets/dataset_80000000.txt
+Time in Seconds: 0.036828 for ../../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 114466.c008
+# Date: Sun May 24 19:40:20 PDT 2020
+########################################################################
+
