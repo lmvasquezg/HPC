@@ -9,7 +9,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 void reverse_secuence(string &secuence);
-void complement(string &secuence);
+
 
 int main(int argc, char *argv[]) {
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
   double ts = omp_get_wtime();
   reverse_secuence(dna);
   double tf = omp_get_wtime();
-
+  // cout << dna;
   cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
     
   ofstream outputFile;

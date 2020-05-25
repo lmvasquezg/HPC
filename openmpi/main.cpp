@@ -1,0 +1,73 @@
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <fstream>
+#include <cstdlib>
+#include <omp.h>
+#include <mpi.h>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+void reverse_secuence(string &secuence);
+void complement(string &secuence);
+
+int main(int argc, char *argv[]) {
+    MPI_Init(&argc, &argv);
+    int rank, nRanks;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &nRanks);
+    ifstream secuence(argv[1]);
+
+    string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
+    secuence.close();
+    MPI_Barrier(MPI_COMM_WORLD);
+    
+    double ts = omp_get_wtime();
+    reverse_secuence(dna);
+    complement(dna);
+    // xcout << dna;
+    double tf = omp_get_wtime();
+    MPI_Barrier(MPI_COMM_WORLD);
+    
+    if( rank == 0){
+    cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
+    
+    ofstream outputFile;
+    outputFile.open("complemento.txt");
+    outputFile << dna;
+    outputFile.close();
+    }
+
+    return 0;
+}
+
+
+
+ void reverse_secuence(string &secuence) {
+   int len = secuence.length();
+   int n = len - 1;
+   for(int i = 0; i < (len/2); i++){
+     swap(secuence[i], secuence[n]);
+     n = n - 1;
+   }   
+}
+
+void complement(string &secuence){
+  for(int i = 0 ; i < secuence.length(); i++){
+    
+    if( secuence[i] == 'A'){
+      secuence[i] = 'T';
+    }
+    else if( secuence[i] == 'T'){
+      secuence[i] = 'A';
+    }
+    else if( secuence[i] == 'G'){
+      secuence[i] = 'C';
+    }
+    else if( secuence[i] == 'C'){
+      secuence[i] = 'G';
+    }
+
+  }
+}
