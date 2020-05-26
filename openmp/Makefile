@@ -1,9 +1,13 @@
 CXXFLAGS = -qopenmp
 CXX = icpc
 
-bin/app: main.cpp 
+bin/app: bin/main.o 
 	mkdir -p bin/
-	$(CXX) -c ${CXXFLAGS} -o "$@" "$^"  
+	$(CXX) -o $@ $^ $(CXXFLAGS)
+
+bin/main.o: main.cpp
+	mkdir -p bin/
+	$(CXX) -c $^ -o $@ $(CXXFLAGS) 
 
 clean:
-	rm -rf bin/ *.o *.gch 
+	rm -rf bin/ *.o *.gch transcoder

@@ -12,7 +12,7 @@ char* reverse_secuence(string &secuence);
 
 
 int main(int argc, char *argv[]) {
-
+ 
   ifstream secuence(argv[1]);
   string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
   secuence.close();

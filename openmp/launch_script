@@ -1,7 +1,7 @@
 #PBS -N thread16
-#PBS -l nodes=1:knl7210 walltime=01:00:00
+#PBS -l nodes=4:knl7210 walltime=01:00:00
 cd $PBS_O_WORKDIR
-export OMP_NUM_THREADS=16
+export OMP_NUM_THREADS = 128
 bin/app ../../datasets/dataset_804.txt
 bin/app ../../datasets/dataset_989.txt
 bin/app ../../datasets/dataset_6000.txt
