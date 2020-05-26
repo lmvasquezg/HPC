@@ -1,0 +1,45 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Tue May 26 15:37:06 PDT 2020
+#    Job ID:           115085.c008
+#      User:           u43285
+# Resources:           neednodes=4:knl7210,nodes=4:knl7210,walltime=00:05:00
+########################################################################
+
+Time in Seconds: 0.00071907 for ../datasets/dataset_804.txt
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 259030 RUNNING AT c008-n001
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+Time in Seconds: 0.000317097 for ../datasets/dataset_6000.txt
+Time in Seconds: 0.000550032 for ../datasets/dataset_10000.txt
+Time in Seconds: 0.0122449 for ../datasets/dataset_973470.txt
+Time in Seconds: 0.0165122 for ../datasets/dataset_1162062.txt
+Time in Seconds: 0.019892 for ../datasets/dataset_1385802.txt
+Time in Seconds: 0.0425868 for ../datasets/dataset_3001581.txt
+Time in Seconds: 0.0775869 for ../datasets/dataset_5927724.txt
+Time in Seconds: 0.100865 for ../datasets/dataset_7765758.txt
+Time in Seconds: 0.10783 for ../datasets/dataset_8285706.txt
+Time in Seconds: 0.144981 for ../datasets/dataset_11320749.txt
+Time in Seconds: 0.153364 for ../datasets/dataset_12154329.txt
+Time in Seconds: 0.200429 for ../datasets/dataset_15714072.txt
+Time in Seconds: 0.246656 for ../datasets/dataset_19403505.txt
+Time in Seconds: 0.254848 for ../datasets/dataset_20000000.txt
+Time in Seconds: 0.373375 for ../datasets/dataset_30000000.txt
+Time in Seconds: 0.498889 for ../datasets/dataset_40000000.txt
+Time in Seconds: 0.622661 for ../datasets/dataset_50000000.txt
+Time in Seconds: 0.743377 for ../datasets/dataset_60000000.txt
+Time in Seconds: 0.994108 for ../datasets/dataset_80000000.txt
+Time in Seconds: 1.24371 for ../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 115085.c008
+# Date: Tue May 26 15:37:50 PDT 2020
+########################################################################
+

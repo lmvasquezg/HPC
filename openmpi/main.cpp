@@ -63,9 +63,11 @@ char* reverse_complement(string &secuence, int rank, int nRanks) {
   if ( len % nRanks > 0 && rank == 0) end = end + (len%nRanks) ;
   char* res = new char[end-start];
   int n = end -start -1;
-
+  omp_set_num_threads(4);
+#pragma omp parallel for shared(secuence,res,start,end) firstprivate(n)
   for ( int i= start; i< end ; i++) {
-    
+    n = (end - start -1 ) -(i -start) ;
+    // cout << "Proceso " << rank << "Hilo" << omp_get_thread_num() << "N " << n <<"I " << i <<endl;
     if( secuence[i] == 'A'){
       res[n] = 'T';
     }
@@ -92,7 +94,7 @@ char* reverse_complement(string &secuence, int rank, int nRanks) {
   //char *parte = (char *)res;
   int parte_len = strlen(res);
   
-  printf("Rank %d: %s\n", rank, res);
+  // printf("Rank %d: \n", rank);
   if (rank == 0) {
     dis = (int *)malloc( nRanks * sizeof(int) );
     count = (int *)malloc( nRanks * sizeof(int)) ;
@@ -118,7 +120,7 @@ char* reverse_complement(string &secuence, int rank, int nRanks) {
   MPI_Gatherv(res, end - start, MPI_CHAR, comp, count,dis, MPI_CHAR, 0, MPI_COMM_WORLD);
   //MPI_Gather(res + start, end -start, MPI_CHAR, rna, steps, MPI_CHAR, 0, MPI_COMM_WORLD);
   if( rank == 0){
-    printf("%d: <%s>\n", rank, comp);
+    //printf("%d: <%s>\n", rank, comp);
     //free(comp);
     free(dis);
     free(count);

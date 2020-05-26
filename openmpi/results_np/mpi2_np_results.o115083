@@ -1,0 +1,38 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Tue May 26 15:35:43 PDT 2020
+#    Job ID:           115083.c008
+#      User:           u43285
+# Resources:           neednodes=2:knl7210,nodes=2:knl7210,walltime=00:05:00
+########################################################################
+
+Time in Seconds: 0.000164032 for ../datasets/dataset_804.txt
+Time in Seconds: 0.000156164 for ../datasets/dataset_989.txt
+Time in Seconds: 0.000238895 for ../datasets/dataset_6000.txt
+Time in Seconds: 0.000498056 for ../datasets/dataset_10000.txt
+Time in Seconds: 0.021373 for ../datasets/dataset_973470.txt
+Time in Seconds: 0.0241761 for ../datasets/dataset_1162062.txt
+Time in Seconds: 0.0254381 for ../datasets/dataset_1385802.txt
+Time in Seconds: 0.0517969 for ../datasets/dataset_3001581.txt
+Time in Seconds: 0.102638 for ../datasets/dataset_5927724.txt
+Time in Seconds: 0.132203 for ../datasets/dataset_7765758.txt
+Time in Seconds: 0.141183 for ../datasets/dataset_8285706.txt
+Time in Seconds: 0.186344 for ../datasets/dataset_11320749.txt
+Time in Seconds: 0.198005 for ../datasets/dataset_12154329.txt
+Time in Seconds: 0.258446 for ../datasets/dataset_15714072.txt
+Time in Seconds: 0.314352 for ../datasets/dataset_19403505.txt
+Time in Seconds: 0.328372 for ../datasets/dataset_20000000.txt
+Time in Seconds: 0.478766 for ../datasets/dataset_30000000.txt
+Time in Seconds: 0.645504 for ../datasets/dataset_40000000.txt
+Time in Seconds: 0.802067 for ../datasets/dataset_50000000.txt
+Time in Seconds: 0.963691 for ../datasets/dataset_60000000.txt
+Time in Seconds: 1.27987 for ../datasets/dataset_80000000.txt
+Time in Seconds: 1.59829 for ../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 115083.c008
+# Date: Tue May 26 15:36:22 PDT 2020
+########################################################################
+
