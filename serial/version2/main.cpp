@@ -8,43 +8,48 @@
 #include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
+
 void reverse_secuence(string &secuence);
 void complement(string &secuence);
 
 int main(int argc, char *argv[]) {
 
-    ifstream secuence(argv[1]);
+   //Lectura de archivos
+  ifstream secuence(argv[1]);
+  string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
+  secuence.close();
 
-    string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
-    secuence.close();
-    double ts = omp_get_wtime();
-    reverse_secuence(dna);
-    complement(dna);
-    // xcout << dna;
-    double tf = omp_get_wtime();
+  //Toma de tiempos
+  double ts = omp_get_wtime();
+  reverse_secuence(dna);
+  complement(dna);
+  double tf = omp_get_wtime();
 
-    cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
-    
-    ofstream outputFile;
-    outputFile.open("complemento.txt");
-    outputFile << dna;
-    outputFile.close();
+  cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
+  
+  //Escribir salida
+  ofstream outputFile;
+  outputFile.open("complemento.txt");
+  outputFile << dna;
+  outputFile.close();
 
-    return 0;
+  return 0;
 }
 
 
-
- void reverse_secuence(string &secuence) {
-   int len = secuence.length();
-   int n = len - 1;
-   for(int i = 0; i < (len/2); i++){
-     swap(secuence[i], secuence[n]);
-     n = n - 1;
-   }   
+//Reversar secuencia por intercambios de parejas
+void reverse_secuence(string &secuence) {
+  int len = secuence.length();
+  int n = len - 1;
+  for(int i = 0; i < (len/2); i++){
+    swap(secuence[i], secuence[n]);
+    n = n - 1;
+  }   
 }
 
+//Cambiar cada base por su complemento
 void complement(string &secuence){
+  
   for(int i = 0 ; i < secuence.length(); i++){
     
     if( secuence[i] == 'A'){

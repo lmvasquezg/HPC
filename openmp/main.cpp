@@ -8,20 +8,24 @@
 #include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
-char* reverse_secuence(string &secuence);
+
+char* reverse_complement(string &secuence);
 
 
 int main(int argc, char *argv[]) {
  
+  //Lectura de arhivo
   ifstream secuence(argv[1]);
   string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
   secuence.close();
 
+  //Toma de tiempos
   double ts = omp_get_wtime();
-  char *res = reverse_secuence(dna);
+  char *res = reverse_complement(dna);
   double tf = omp_get_wtime();
   cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
   
+  //Escritura
   ofstream outputFile;
   outputFile.open("complemento.txt");
   outputFile << res << endl;
@@ -31,11 +35,12 @@ int main(int argc, char *argv[]) {
 }
 
 
-char* reverse_secuence(string &secuence) {
+char* reverse_complement(string &secuence) {
   int len = secuence.length();
   char *res= new char[len];
   int n = len -1;
-  #pragma omp parallel for shared(secuence,res,len) firstprivate(n)
+  // las variables n y i son independientes para cada hilo
+  #pragma omp parallel for shared(secuence,res,len) private(n)
   for ( int i= 0; i< len ; i++) {
     n = len -i -1;
     if( secuence[i] == 'A'){

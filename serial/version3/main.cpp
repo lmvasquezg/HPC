@@ -8,34 +8,41 @@
 #include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
-char* reverse_secuence(string &secuence);
+
+char* reverse_complement(string &secuence);
 
 
 int main(int argc, char *argv[]) {
 
+  //Lectura de archivo
   ifstream secuence(argv[1]);
-
   string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
   secuence.close();
+
+  //Toma de tiempos
   double ts = omp_get_wtime();
-  char *res = reverse_secuence(dna);
+  char *res = reverse_complement(dna);
   double tf = omp_get_wtime();
   cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
-  
+
+  //Escritura
   ofstream outputFile;
   outputFile.open("complemento.txt");
   outputFile << res << endl;
   outputFile.close();
-  //free(res);
+ 
   return 0;
 }
 
 
-char* reverse_secuence(string &secuence) {
+char* reverse_complement(string &secuence) {
+
   int len = secuence.length();
   char *res= new char[len];
   int n = len - 1;
+
   for ( int i= 0; i< len ; i++) {
+    
     if( secuence[i] == 'A'){
       res[n] = 'T';
     }
@@ -53,5 +60,6 @@ char* reverse_secuence(string &secuence) {
   
   res[len] = '\0';
   res = res +1;
+
   return res;
 }

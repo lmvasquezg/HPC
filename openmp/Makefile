@@ -10,4 +10,4 @@ bin/main.o: main.cpp
 	$(CXX) -c $^ -o $@ $(CXXFLAGS) 
 
 clean:
-	rm -rf bin/ *.o *.gch transcoder
+	rm -rf bin/ *.o *.gch 
