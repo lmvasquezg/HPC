@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <boost/algorithm/string.hpp>
 #include <iostream>
 #include <string>
@@ -30,20 +32,21 @@ int main(int argc, char *argv[]) {
   double start,finish;
   //Ejecución y toma de tiempos
   if ( rank == 0 ) start = omp_get_wtime();
-  reverse_complement(dna, rank, nRanks);
+  char *res = reverse_complement(dna, rank, nRanks);
   if ( rank == 0 ) finish = omp_get_wtime();
   
   MPI_Barrier(MPI_COMM_WORLD);
 
   //Resultados
-  cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
+  if (rank == 0) cout << "Time in Seconds: " << finish - start << " for " << argv[1] << endl;
   
   //Escritura a archivo
   if ( rank == 0){
     ofstream outputFile;
     outputFile.open("complemento.txt");
-    outputFile << dna;
+    outputFile << res << endl;
     outputFile.close();
+    free(res);
   }
 
   MPI_Finalize();
@@ -55,16 +58,14 @@ int main(int argc, char *argv[]) {
 char* reverse_complement(string &secuence, int rank, int nRanks) {
   int len = secuence.length();
   int steps = len / nRanks;
-  int start = steps * rank;
-  int end = steps * (rank + 1);
-  if ( len % nRanks > 0 && rank == nRanks - 1) end = end + (len%nRanks) ;
-  cout << steps << endl;
-  char *res= new char[len];
-  int n = len -1;
+  int start = steps * (nRanks -1 - rank);
+  int end = steps * (nRanks - rank);
+  if ( len % nRanks > 0 && rank == 0) end = end + (len%nRanks) ;
+  char* res = new char[end-start];
+  int n = end -start -1;
 
-  //#pragma omp parallel for shared(secuence,res,len) private(n)
   for ( int i= start; i< end ; i++) {
-    n = len -i -1;
+    
     if( secuence[i] == 'A'){
       res[n] = 'T';
     }
@@ -76,29 +77,52 @@ char* reverse_complement(string &secuence, int rank, int nRanks) {
     }
     else if( secuence[i] == 'C'){
       res[n] = 'G';
+    }else{
+      res[n] = secuence[i];
     }
     n = n - 1;
   }
-  res[len] = '\0';
-  res = res +1;
-
+  res[end -start] = '\0';
+  //res = res +1;
+  //string str(res);
+  //cout << res << "La parte de " << rank<< endl;
   char *comp = NULL;
-  int receive_counts[nRanks];
-  int receive_displacements[nRanks];
-  if (rank == 0) {
-    comp = (char *) malloc(sizeof(char) * secuence.length());
-  }
-
-  for(  int i = 0; i < sizeof(receive_counts)/sizeof(receive_counts[0]); i++ ){
-    if(i == nRanks - 1){
-      receive_counts[i] = steps + (len % nRanks);
-    }else{
-      receive_counts[i] = steps;
-    }
-    receive_displacements[i]=0;
-  }
-  MPI_Gatherv(res + start, end-start, MPI_CHAR, comp, receive_counts,receive_displacements, MPI_CHAR, 0, MPI_COMM_WORLD);
+  int *dis = NULL;
+  int *count = NULL;
+  //char *parte = (char *)res;
+  int parte_len = strlen(res);
   
-  return res;
+  printf("Rank %d: %s\n", rank, res);
+  if (rank == 0) {
+    dis = (int *)malloc( nRanks * sizeof(int) );
+    count = (int *)malloc( nRanks * sizeof(int)) ;
+    dis[0] = 0;
+    for(int i = 0; i < nRanks ; i++){
+      if( i > 0 ){
+	count[i]=steps;
+      }else{
+	count[i]= steps + (len % nRanks);
+      }
+    }
+
+    for (int i = 1; i < nRanks; i++) {
+      dis[i] = dis[i-1] + count[i-1];
+    }
+
+    /* allocate string, pre-fill with spaces and null terminator */
+    comp = (char *)malloc(len * sizeof(char));            
+    for (int i=0; i<len; i++) comp[i] = ' ';
+    comp[len] = '\0';   
+  } 
+
+  MPI_Gatherv(res, end - start, MPI_CHAR, comp, count,dis, MPI_CHAR, 0, MPI_COMM_WORLD);
+  //MPI_Gather(res + start, end -start, MPI_CHAR, rna, steps, MPI_CHAR, 0, MPI_COMM_WORLD);
+  if( rank == 0){
+    printf("%d: <%s>\n", rank, comp);
+    //free(comp);
+    free(dis);
+    free(count);
+  }
+  return comp;
 
 }

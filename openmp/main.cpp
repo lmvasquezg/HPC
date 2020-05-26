@@ -40,7 +40,8 @@ char* reverse_complement(string &secuence) {
   char *res= new char[len];
   int n = len -1;
   // las variables n y i son independientes para cada hilo
-  #pragma omp parallel for shared(secuence,res,len) private(n)
+  omp_set_num_threads(64);  
+#pragma omp parallel for shared(secuence,res,len) private(n)
   for ( int i= 0; i< len ; i++) {
     n = len -i -1;
     if( secuence[i] == 'A'){

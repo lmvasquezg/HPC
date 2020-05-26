@@ -1,0 +1,38 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Tue May 26 14:36:08 PDT 2020
+#    Job ID:           115065.c008
+#      User:           u43285
+# Resources:           neednodes=1:knl7210,nodes=1:knl7210,walltime=00:05:00
+########################################################################
+
+Time in Seconds: 0.244068 for ../datasets/dataset_804.txt
+Time in Seconds: 0.205716 for ../datasets/dataset_989.txt
+Time in Seconds: 0.216929 for ../datasets/dataset_6000.txt
+Time in Seconds: 0.228334 for ../datasets/dataset_10000.txt
+Time in Seconds: 0.236048 for ../datasets/dataset_973470.txt
+Time in Seconds: 0.2135 for ../datasets/dataset_1162062.txt
+Time in Seconds: 0.225733 for ../datasets/dataset_1385802.txt
+Time in Seconds: 0.226065 for ../datasets/dataset_3001581.txt
+Time in Seconds: 0.231765 for ../datasets/dataset_5927724.txt
+Time in Seconds: 0.213664 for ../datasets/dataset_7765758.txt
+Time in Seconds: 0.22031 for ../datasets/dataset_8285706.txt
+Time in Seconds: 0.266473 for ../datasets/dataset_11320749.txt
+Time in Seconds: 0.231637 for ../datasets/dataset_12154329.txt
+Time in Seconds: 0.225208 for ../datasets/dataset_15714072.txt
+Time in Seconds: 0.239914 for ../datasets/dataset_19403505.txt
+Time in Seconds: 0.23685 for ../datasets/dataset_20000000.txt
+Time in Seconds: 0.237374 for ../datasets/dataset_30000000.txt
+Time in Seconds: 0.252463 for ../datasets/dataset_40000000.txt
+Time in Seconds: 0.232867 for ../datasets/dataset_50000000.txt
+Time in Seconds: 0.247594 for ../datasets/dataset_60000000.txt
+Time in Seconds: 0.237289 for ../datasets/dataset_80000000.txt
+Time in Seconds: 0.257089 for ../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 115065.c008
+# Date: Tue May 26 14:36:33 PDT 2020
+########################################################################
+

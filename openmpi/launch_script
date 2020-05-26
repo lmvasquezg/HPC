@@ -1,26 +1,28 @@
-#PBS -N mpi2_results
-#PBS -l nodes=2:knl7210 walltime=01:00:00
+#PBS -N mpi4_results
+#PBS -l nodes=4:knl7210 
+#PBS -l walltime=00:05:00
 cd $PBS_O_WORKDIR
+export I_MPI_FABRICS=tcp
 
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_804.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_989.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_6000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_10000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_973470.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_1162062.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_1385802.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_3001581.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_5927724.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_7765758.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_8285706.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_11320749.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_12154329.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_15714072.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_19403505.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_20000000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_30000000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_40000000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_50000000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_60000000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_80000000.txt
-mpirun -machinefile $PBS_NODEFILE bin/app ../../datasets/dataset_100000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_804.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_989.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_6000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_10000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_973470.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_1162062.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_1385802.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_3001581.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_5927724.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_7765758.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_8285706.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_11320749.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_12154329.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_15714072.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_19403505.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_20000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_30000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_40000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_50000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_60000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_80000000.txt
+mpirun -machinefile $PBS_NODEFILE bin/app ../datasets/dataset_100000000.txt

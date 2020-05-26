@@ -1,12 +1,12 @@
 CXX = icpc
-
+CXXFLAGS = -qopenmp
 bin/app: bin/main.o 
 	mkdir -p bin/
-	$(CXX) -o $@ $^ 
+	$(CXX) -o $@ $^ $(CXXFLAGS) 
 
 bin/main.o: main.cpp
 	mkdir -p bin/
-	$(CXX) -c $^ -o $@ 
+	$(CXX) -c $^ -o $@ $(CXXFLAGS)
 
 clean:
 	rm -rf bin/ *.o *.gch 
