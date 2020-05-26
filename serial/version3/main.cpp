@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <bits/stdc++.h>
 using namespace std;
-void reverse_secuence(string &secuence);
+char* reverse_secuence(string &secuence);
 
 
 int main(int argc, char *argv[]) {
@@ -18,52 +18,40 @@ int main(int argc, char *argv[]) {
   string dna( (istreambuf_iterator<char>(secuence) ),(istreambuf_iterator<char>()    ) );
   secuence.close();
   double ts = omp_get_wtime();
-  reverse_secuence(dna);
+  char *res = reverse_secuence(dna);
   double tf = omp_get_wtime();
-  // cout << dna;
   cout << "Time in Seconds: " << tf - ts << " for " << argv[1] << endl;
-    
+  
   ofstream outputFile;
   outputFile.open("complemento.txt");
-  outputFile << dna;
+  outputFile << res << endl;
   outputFile.close();
-
+  //free(res);
   return 0;
 }
 
 
-
-void reverse_secuence(string &secuence) {
+char* reverse_secuence(string &secuence) {
   int len = secuence.length();
+  char *res= new char[len];
   int n = len - 1;
-  for(int i = 0; i < (len/2); i++){
+  for ( int i= 0; i< len ; i++) {
     if( secuence[i] == 'A'){
-      secuence[i] = 'T';
+      res[n] = 'T';
     }
     else if( secuence[i] == 'T'){
-      secuence[i] = 'A';
+      res[n] = 'A';
     }
     else if( secuence[i] == 'G'){
-      secuence[i] = 'C';
+      res[n] = 'C';
     }
     else if( secuence[i] == 'C'){
-      secuence[i] = 'G';
+      res[n] = 'G';
     }
-
-    if( secuence[n] == 'A'){
-      secuence[n] = 'T';
-    }
-    else if( secuence[n] == 'T'){
-      secuence[n] = 'A';
-    }
-    else if( secuence[n] == 'G'){
-      secuence[n] = 'C';
-    }
-    else if( secuence[n] == 'C'){
-      secuence[n] = 'G';
-    }
-
-    swap(secuence[i], secuence[n]);
     n = n - 1;
-  }   
+  }
+  
+  res[len] = '\0';
+  res = res +1;
+  return res;
 }
