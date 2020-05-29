@@ -1,0 +1,38 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Tue May 26 14:28:14 PDT 2020
+#    Job ID:           115058.c008
+#      User:           u43285
+# Resources:           neednodes=1:knl7210,nodes=1:knl7210,walltime=00:05:00
+########################################################################
+
+Time in Seconds: 0.0460021 for ../datasets/dataset_804.txt
+Time in Seconds: 0.033756 for ../datasets/dataset_989.txt
+Time in Seconds: 0.0357769 for ../datasets/dataset_6000.txt
+Time in Seconds: 0.0339711 for ../datasets/dataset_10000.txt
+Time in Seconds: 0.038717 for ../datasets/dataset_973470.txt
+Time in Seconds: 0.0385549 for ../datasets/dataset_1162062.txt
+Time in Seconds: 0.041256 for ../datasets/dataset_1385802.txt
+Time in Seconds: 0.0492959 for ../datasets/dataset_3001581.txt
+Time in Seconds: 0.067332 for ../datasets/dataset_5927724.txt
+Time in Seconds: 0.0783741 for ../datasets/dataset_7765758.txt
+Time in Seconds: 0.080179 for ../datasets/dataset_8285706.txt
+Time in Seconds: 0.0976701 for ../datasets/dataset_11320749.txt
+Time in Seconds: 0.101551 for ../datasets/dataset_12154329.txt
+Time in Seconds: 0.122571 for ../datasets/dataset_15714072.txt
+Time in Seconds: 0.144197 for ../datasets/dataset_19403505.txt
+Time in Seconds: 0.145528 for ../datasets/dataset_20000000.txt
+Time in Seconds: 0.201845 for ../datasets/dataset_30000000.txt
+Time in Seconds: 0.262509 for ../datasets/dataset_40000000.txt
+Time in Seconds: 0.316544 for ../datasets/dataset_50000000.txt
+Time in Seconds: 0.372159 for ../datasets/dataset_60000000.txt
+Time in Seconds: 0.486638 for ../datasets/dataset_80000000.txt
+Time in Seconds: 0.601004 for ../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 115058.c008
+# Date: Tue May 26 14:28:35 PDT 2020
+########################################################################
+
