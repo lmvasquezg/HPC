@@ -68,6 +68,28 @@ De los resultados obtenidos se puede concluir que la solución más rápida es e
 
 En primer lugar, se decidió utilizar el leguaje de programación C++ debido a que a diferencia de Python es un lenguaje compilado que no requiere una máquina virtual y por lo tanto le permite tener menores tiempos de ejecución. Usando esta herramienta, se diseñaron tres algoritmos secuenciales:
 
+### Compilación y ejecución
+
+Todas las soluciones implementadas en C++ se pueden compilar usando el siguiente comando ubicándose en el directorio donde se encuentra el archivo fuente y el Makefile
+
+````bash
+$ make
+````
+
+Este comando utilizará el compilador de Intel para generar la carpeta *bin* donde se encontrará el ejecutable, para correr el programa solo con un dataset especifico use el siguiente comando:
+
+````bash
+$ qsub -l nodes=1:knl7210 bin/app <ruta_dataset> 
+````
+
+Sin embargo, si se desea ejecutar con múltiples tamaños de datasets ya establecidos utilice el *launch_script* con el siguiente comando:
+
+````bash
+$ qsub launch_script
+````
+
+El comando *qsub* enviará a la cola de ejecución en el clúster Intel las instrucciones necesarias para ejecutar el programa deseado.
+
 ### Primera versión
 
 En esta versión se buscó adaptar al leguaje seleccionado la versión más rápida de Python. Para esto se utilizaron los métodos de la librería String y Boost para hacer el complemento de las bases y el reverso respectivamente.
@@ -101,13 +123,56 @@ A continuación, se muestran las comparaciones entre las versiones de C++ realiz
 
 [GRAFICAS DE COMPARACIÓN]
 
+## 10. Versión paralelizada
+
+Se realizó el diseño de dos algoritmos paralelos, uno utilizando OpenMP y otro OpenMPI, estos se encuentran descritos en el documento [pcam.md](https://github.com/lmvasquezg/HPC/blob/master/pcam.md).
+
+### Compilación y ejecución
+
+Diríjase a la [sección de compilación y ejecución serial](#compilación-y-ejecución) y siga las instrucciones allí descritas. El Makefile y el launch_script de las versiones paralelizadas contiene los flags y comandos necesarios para la compilación y ejecución de estas nuevas versiones.
+
+### Versión OpenMP
+
+Siguiendo el diseño realizado se agregó el siguiente código antes del ciclo:
+
+````c++
+omp_set_num_threads(64);  
+#pragma omp parallel for shared(secuence,res,len) private(n)
+````
+
+La primera línea establece la cantidad de hilos que correrán el ciclo, refiérase al documento [pcam.md](https://github.com/lmvasquezg/HPC/blob/master/pcam.md) para obtener más información sobre la razón de porque se eligió 64 hilos.
+
+La segunda línea es la directiva de compilación para establecer que cada hilo tendrá como variables compartidas *secuence* (cadena de entrada), *res* (cadena de salida) y *len* (longitud de la cadena de entrada), además, tendrá como variables privadas *n* e *i*, las cuales corresponden a la posición de escritura y de lectura respectivamente, ya que *i* es inicializada dentro del ciclo no es necesario especificar que es una variable privada.
+
+Una vez realizada la implementación y probada su correcta ejecución se pasó a verificar que 64 hilos cumplan con lo analizado anteriormente, es decir, sea la versión óptima por medio de experimentos con diferentes cantidades de hilos y los resultados obtenidos fueron los esperados.
+
+[GRAFICA DE HILOS]
+
+Ya que la creación y sincronización de hilos toma cierto tiempo, en datasets pequeños en lugar de reducir el tiempo de ejecución lo extiende. Sin embargo, en los datasets más grandes se llega a una reducción de un 96% respecto a la mejor versión de C++ y considerando que los tiempos de ejecución para todos los datasets son menores a 1 segundo, se considera una mejora significativa.
+
+### Versión OpenMPI
+
+Siguiendo el diseño realizado, se inicializó MPI y se crearon barreras para asegurar que todos los procesos empezaran en un mismo punto y que la toma del tiempo no se viera afectada por el orden de ejecución de los procesos. Una vez dentro del ciclo se ejecutaron los cálculos necesarios para que cada proceso generara su parte correspondiente. Después de que cada proceso tiene su resultado en una variable se inicializan múltiples apuntadores necesarios para la unión de todos los segmentos, estos son:
+
+* comp: este será el buffer que almacenará todos los resultados en una misma cadena, se inicializa con la longitud de la cadena de entrada y espacios en blanco terminados por un separador.
+* count: determina la cantidad de caracteres que serán enviados por cada uno de los nodos, ya que, si la cantidad de estos no divide exactamente al tamaño de la cadena de entrada, ciertos nodos tendrán que enviar más caracteres que otros. Es inicializado por el nodo raíz que conoce cuantos registros procesa cada nodo.
+* dis: establece la separación entre cada una de las cadenas que serán enviadas por los nodos, en este caso se inicializa sumando acumulativamente las longitudes de cada una de estas, basándose en count.
+
+Una vez inicializados estos tres apuntadores se utiliza el método *MPI_Gatherv* que se encarga de reunir todas las cadenas a través de los procesos que están corriendo. Después de esto se procede a escribir la respuesta en el archivo de salida y a liberar los apuntadores.
+
+Ya terminada la implementación se procedió a realizar pruebas usando la versión de varios procesos con un único hilo para cada uno y se llegó a la conclusión de que entre más procesos mayor optimización, logrando una reducción con 4 procesos del 44% respecto a la mejor versión serial de C++.
+
+[GRAFICA MPI]
+
+Posteriormente, se ejecutaron pruebas usando la versión de varios procesos con la versión de memoria compartida en cada uno de estos
+
 ## Referencias
 
 * ADN: cambios en la ciencia y en la sociedad. Recuperado de: https://books.google.com.co/books?id=xvxsUr07DUYC&lpg=PP1&ots=6zjz8sak6-&dq=ADN%20%20doble%20helice&lr&hl=es&pg=PP1#v=onepage&q=ADN%20%20doble%20helice&f=false 
 
 * Complementing a Strand of DNA. Rosalind. Recuperado de: http://rosalind.info/problems/revc/
 
-* Propiedades cluster Intel. Recuperado de: 
+* Propiedades clúster Intel. Recuperado de: 
     * https://ark.intel.com/content/www/us/en/ark/products/81061/intel-xeon-processor-e5-2699-v3-45m-cache-2-30-ghz.html 
     * https://ark.intel.com/content/www/us/en/ark/products/94035/intel-xeon-phi-processor-7250-16gb-1-40-ghz-68-core.html
 
