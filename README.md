@@ -14,11 +14,11 @@ Luisa María Vásquez Gómez - lmvasquezg@eafit.edu.co
 
 Con los avances de la computación en los últimos años, se han desarrollado arquitecturas que permiten representar situaciones de la vida real y mediante estas analizar y dar soluciones a problemas complejos. Gracias a la creación de supercomputadores y herramientas de paralelización se ha podido avanzar a gran escala en diferentes campos de la ciencia que requieren de simulaciones extensas y complicadas tales como la geología, biología, química farmacéutica, entre otros.
 
-Particularmente en el mundo de la biología se presentan diversas situaciones en las que estas tecnologías pueden ayudar, una de ellas siendo el análisis del material genético que compone a los seres humanos, denominado ADN. Este cadena define las características que cada persona posee y es actualmente foco de estudio debido a las modificaciones que se pueden hacer para curar enfermedades o defectos. Uno de los procesos básicos en este estudio consiste en poder simular la basta cantidad de nucleótidos que componen estas cadenas ya que es la combinación de estos de donde surge la información.
+Particularmente en el mundo de la biología se presentan diversas situaciones en las que estas tecnologías pueden ayudar, una de ellas siendo el análisis del material genético que compone a los seres humanos, denominado ADN. Esta cadena define las características que cada persona posee y es actualmente foco de estudio debido a las modificaciones que se pueden hacer para curar enfermedades o defectos. Uno de los procesos básicos en este estudio consiste en poder simular la basta cantidad de nucleótidos que componen estas cadenas ya que es la combinación de estos de donde surge la información.
 
 ## 3. Problema o casos de estudio a resolver
 
-La cadena de ADN se compone de dos cadenas antiparalelas helicoidales con apareamiento por bases complementarias (citosina, guanina, adenina y timina), esto se refiere a que cada una de las hebras que componen la doble hélice se complementa con la otra, siendo la citosina (C)  el complemento de la guanina (G), la adenina (A) el de la timina (T) y visceversa. De acuerdo a la investigación realizada por James Watson y Francis Crick en 1953 la unión de dos bases complementarias se llama pareja base, por tanto, si sabemos el orden de las bases de una hebra podemos inmediatamente deducir la secuencia de bases de su hebra complementaria. Debido a que las dos hebras van en direcciones contrarias, los complementos deben calcularse de igual manera, es decir, invertir la cadena y encontrar el complemento de cada base.
+La cadena de ADN se compone de dos cadenas antiparalelas helicoidales con apareamiento por bases complementarias (citosina, guanina, adenina y timina), esto se refiere a que cada una de las hebras que componen la doble hélice se complementa con la otra, siendo la citosina (C) el complemento de la guanina (G), la adenina (A) el de la timina (T) y viceversa. De acuerdo con la investigación realizada por James Watson y Francis Crick en 1953 la unión de dos bases complementarias se llama pareja base, por tanto, si sabemos el orden de las bases de una hebra podemos inmediatamente deducir la secuencia de bases de su hebra complementaria. Debido a que las dos hebras van en direcciones contrarias, los complementos deben calcularse de igual manera, es decir, invertir la cadena y encontrar el complemento de cada base.
 
 El problema reside en que las cadenas de ADN son muy extensas y para calcular el complemento reverso es necesario pasar por cada una de las bases, haciendo de este un problema de complejidad lineal. Ya que el complemento de una base se calcula de manera independiente a los demás, es posible segmentar la cadena y calcular diferentes complementos para luego unirlos y así minimizar el tiempo de ejecución.
 
@@ -39,7 +39,7 @@ Obtener una experiencia en programación paralela utilizando diferentes framewor
 
 ## 5. Requerimientos técnicos
 
-* Acceso al cluster de Intel con el que se realizó el MOOC, el cual brinda acceso a nodos con alto número de procesadores (hasta 68) y velocidades de hasta 3.6 GHZ y memoria RAM desde 96 a 128 GB.
+* Acceso al clúster de Intel con el que se realizó el MOOC, el cual brinda acceso a nodos con alto número de procesadores (hasta 68) y velocidades de hasta 3.6 GHZ y memoria RAM desde 96 a 128 GB.
 * Frameworks de paralelización (OpenMP y OpenMPI).
 * Compiladores para la arquitectura Intel de C y C++.
 * Interpretador de Python3.
@@ -54,23 +54,23 @@ Obtener una experiencia en programación paralela utilizando diferentes framewor
 
 ## 7. Recolección de datos
 
-Se buscaron cadenas existentes de ADN en diferentes plataformas como Kaggle, donde se encontraron datasets de hasta 19 millones de registros. Además se tomaron como referencia los brindados por Rosalind, el lugar donde se plantea el problema, estos datasets no superan los mil registros. Por último, para poder contar con datasets mucho más grandes en donde se pudiera evidenciar el speed up, se generaron aleatoriamente 7 datasets con más de 20 millones de registros, estos están disponibles en el directorio [datasets](https://github.com/lmvasquezg/HPC/tree/master/datasets) junto con el scripts de generación.
+Se buscaron cadenas existentes de ADN en diferentes plataformas como Kaggle, donde se encontraron datasets de hasta 19 millones de registros. Además, se tomaron como referencia los brindados por Rosalind, el lugar donde se plantea el problema, estos datasets no superan los mil registros. Por último, para poder contar con datasets mucho más grandes en donde se pudiera evidenciar el speed up, se generaron aleatoriamente 7 datasets con más de 20 millones de registros, estos están disponibles en el directorio [datasets](https://github.com/lmvasquezg/HPC/tree/master/datasets) junto con el script de generación.
 
 ## 8. Análisis de soluciones previas
 
-Para un contexto de los tiempos de ejecución para el problema planteado, se recolectaron múltiples soluciones a este en el lenguaje Python, el cual es el más utilizado para resolver este tipo de retos, cada uno de estos scripts se encuetra debidamente referenciado en el código. Se tomaron los tiempos de ejecución con diferentes tamaños de datasets:
+Para un contexto de los tiempos de ejecución para el problema planteado, se recolectaron múltiples soluciones a este en el lenguaje Python, el cual es el más utilizado para resolver este tipo de retos, cada uno de estos scripts se encuentra debidamente referenciado en el código. Se tomaron los tiempos de ejecución con diferentes tamaños de datasets:
 
 [IMAGEN DE LOS SCRIPTS DE PYTHON]
 
-De los resultados obtenidos se puede concluir que la solución más rápida es el script 2, el cual utiliza los métodos brindados por Python para reemplazar cada base por su complemento y para reversarlo. El tiempo minimo para la lectura de 100 millones de registros fue de 4.88 segundos. Basado en este valor se determinará el speed up para futuras soluciones.
+De los resultados obtenidos se puede concluir que la solución más rápida es el script 2, el cual utiliza los métodos brindados por Python para reemplazar cada base por su complemento y para reversarlo. El tiempo mínimo para la lectura de 100 millones de registros fue de 4.88 segundos. Basado en este valor se determinará el speed up para futuras soluciones.
 
 ## 9. Versión secuencial
 
-En primer lugar, se decidió utilizar el leguaje de progamación C++ debido a que a diferencia de Python es un lenguaje compilado que no requiere una máquina virtual y por lo tanto le permite tener menores tiempos de ejecución. Usando esta herramienta, se diseñaron tres algorítmos secuenciales:
+En primer lugar, se decidió utilizar el leguaje de programación C++ debido a que a diferencia de Python es un lenguaje compilado que no requiere una máquina virtual y por lo tanto le permite tener menores tiempos de ejecución. Usando esta herramienta, se diseñaron tres algoritmos secuenciales:
 
 ### Primera versión
 
-En esta versión se buscó adaptar al leguaje seleccionado la versión más rápida de Python. Para esto se utilizaron los metodos de la libreria String y Boost para hacer el complemento de las bases y el reverso respectivamente.
+En esta versión se buscó adaptar al leguaje seleccionado la versión más rápida de Python. Para esto se utilizaron los métodos de la librería String y Boost para hacer el complemento de las bases y el reverso respectivamente.
 
 En esta versión se obtuvieron resultados muy similares al script 5 de Python, el cual logra leer el archivo de 100 millones en aproximadamente 25 segundos. Estos tiempos están lejos de ser cercanos a la mejor versión de Python, por lo que es descartada.
 
@@ -97,7 +97,7 @@ Una vez implementado este algoritmo, se tomaron tiempos y se logró procesar la 
 
 ### Comparación
 
-A continuación se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución.
+A continuación, se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución.
 
 [GRAFICAS DE COMPARACIÓN]
 
