@@ -121,7 +121,8 @@ Una vez implementado este algoritmo, se tomaron tiempos y se logró procesar la 
 
 A continuación, se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución.
 
-[GRAFICAS DE COMPARACIÓN]
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Different%20C%2B%2B%20versions.png)
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Best%20C%2B%2B%20vs%20Python.png)
 
 ## 10. Versión paralelizada
 
@@ -146,7 +147,7 @@ La segunda línea es la directiva de compilación para establecer que cada hilo 
 
 Una vez realizada la implementación y probada su correcta ejecución se pasó a verificar que 64 hilos cumplan con lo analizado anteriormente, es decir, sea la versión óptima por medio de experimentos con diferentes cantidades de hilos y los resultados obtenidos fueron los esperados.
 
-[GRAFICA DE HILOS]
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/OpenMP%20Hilos.png)
 
 Ya que la creación y sincronización de hilos toma cierto tiempo, en datasets pequeños en lugar de reducir el tiempo de ejecución lo extiende. Sin embargo, en los datasets más grandes se llega a una reducción de un 96% respecto a la mejor versión de C++ y considerando que los tiempos de ejecución para todos los datasets son menores a 1 segundo, se considera una mejora significativa.
 
@@ -162,7 +163,8 @@ Una vez inicializados estos tres apuntadores se utiliza el método *MPI_Gatherv*
 
 Ya terminada la implementación se procedió a realizar pruebas usando la versión de varios procesos con un único hilo para cada uno y se llegó a la conclusión de que entre más procesos mayor optimización, logrando una reducción con 4 procesos del 44% respecto a la mejor versión serial de C++.
 
-[GRAFICA MPI]
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/MPI%20en%20diferentes%20nodos.png)
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Versi%C3%B3n%20h%C3%ADbrida%20.png)
 
 Posteriormente, se ejecutaron pruebas usando la versión de varios procesos con la versión de memoria compartida en cada uno de estos
 
