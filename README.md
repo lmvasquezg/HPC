@@ -121,6 +121,12 @@ Una vez implementado este algoritmo, se tomaron tiempos y se logró procesar la 
 
 A continuación, se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución.
 
+| Versión  |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio |
+|---|---|---|---|
+| 1  | 9.114599146  |0.2433419855 | 1.237328466  |
+| 2 |  68.96 | 1.756267087  | 9.43  |
+| 3  | 84.29  | 2.299292186  |  11.58 |
+
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Different%20C%2B%2B%20versions.png)
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Best%20C%2B%2B%20vs%20Python.png)
 
