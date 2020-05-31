@@ -60,7 +60,7 @@ Se buscaron cadenas existentes de ADN en diferentes plataformas como Kaggle, don
 
 Para un contexto de los tiempos de ejecución para el problema planteado, se recolectaron múltiples soluciones a este en el lenguaje Python, el cual es el más utilizado para resolver este tipo de retos, cada uno de estos scripts se encuentra debidamente referenciado en el código. Se tomaron los tiempos de ejecución con diferentes tamaños de datasets:
 
-[IMAGEN DE LOS SCRIPTS DE PYTHON]
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Python%20scripts%20vs%20Datasets%20.png)
 
 De los resultados obtenidos se puede concluir que la solución más rápida es el script 2, el cual utiliza los métodos brindados por Python para reemplazar cada base por su complemento y para reversarlo. El tiempo mínimo para la lectura de 100 millones de registros fue de 4.88 segundos. Basado en este valor se determinará el speed up para futuras soluciones.
 
