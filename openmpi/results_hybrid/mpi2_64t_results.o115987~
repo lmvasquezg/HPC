@@ -1,0 +1,76 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Sat May 30 21:49:10 PDT 2020
+#    Job ID:           115987.c008
+#      User:           u43285
+# Resources:           neednodes=2:knl7210,nodes=2:knl7210,walltime=00:05:00
+########################################################################
+
+Time in Seconds: 0.118845 for ../datasets/dataset_804.txt
+Time in Seconds: 0.0830629 for ../datasets/dataset_989.txt
+Time in Seconds: 0.068398 for ../datasets/dataset_6000.txt
+Time in Seconds: 0.068083 for ../datasets/dataset_10000.txt
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 260574 RUNNING AT c008-n001
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 125217 RUNNING AT c008-n002
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+   Intel(R) MPI Library troubleshooting guide:
+      https://software.intel.com/node/561764
+===================================================================================
+Time in Seconds: 0.057019 for ../datasets/dataset_973470.txt
+Time in Seconds: 0.0695622 for ../datasets/dataset_1162062.txt
+Time in Seconds: 0.071274 for ../datasets/dataset_1385802.txt
+Time in Seconds: 0.07213 for ../datasets/dataset_3001581.txt
+Time in Seconds: 0.093822 for ../datasets/dataset_5927724.txt
+Time in Seconds: 0.093823 for ../datasets/dataset_7765758.txt
+Time in Seconds: 0.0985711 for ../datasets/dataset_8285706.txt
+Time in Seconds: 0.113793 for ../datasets/dataset_11320749.txt
+Time in Seconds: 0.117376 for ../datasets/dataset_12154329.txt
+Time in Seconds: 0.134705 for ../datasets/dataset_15714072.txt
+Time in Seconds: 0.151278 for ../datasets/dataset_19403505.txt
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 126122 RUNNING AT c008-n002
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+
+===================================================================================
+=   BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES
+=   PID 126122 RUNNING AT c008-n002
+=   EXIT CODE: 6
+=   CLEANING UP REMAINING PROCESSES
+=   YOU CAN IGNORE THE BELOW CLEANUP MESSAGES
+===================================================================================
+   Intel(R) MPI Library troubleshooting guide:
+      https://software.intel.com/node/561764
+===================================================================================
+Time in Seconds: 0.154003 for ../datasets/dataset_20000000.txt
+Time in Seconds: 0.202123 for ../datasets/dataset_30000000.txt
+Time in Seconds: 0.250776 for ../datasets/dataset_40000000.txt
+Time in Seconds: 0.297267 for ../datasets/dataset_50000000.txt
+Time in Seconds: 0.350263 for ../datasets/dataset_60000000.txt
+Time in Seconds: 0.44156 for ../datasets/dataset_80000000.txt
+Time in Seconds: 0.543199 for ../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 115987.c008
+# Date: Sat May 30 21:49:45 PDT 2020
+########################################################################
+
