@@ -1,0 +1,38 @@
+
+########################################################################
+# Colfax Cluster - https://colfaxresearch.com/
+#      Date:           Sat May 30 20:57:48 PDT 2020
+#    Job ID:           115961.c008
+#      User:           u43285
+# Resources:           neednodes=4:knl7210,nodes=4:knl7210,walltime=00:05:00
+########################################################################
+
+Time in Seconds: 0.0716209 for ../datasets/dataset_804.txt
+Time in Seconds: 0.0595062 for ../datasets/dataset_989.txt
+Time in Seconds: 0.0442431 for ../datasets/dataset_6000.txt
+Time in Seconds: 0.0487478 for ../datasets/dataset_10000.txt
+Time in Seconds: 0.04567 for ../datasets/dataset_973470.txt
+Time in Seconds: 0.0475609 for ../datasets/dataset_1162062.txt
+Time in Seconds: 0.049453 for ../datasets/dataset_1385802.txt
+Time in Seconds: 0.0631349 for ../datasets/dataset_3001581.txt
+Time in Seconds: 0.0832591 for ../datasets/dataset_5927724.txt
+Time in Seconds: 0.0967751 for ../datasets/dataset_7765758.txt
+Time in Seconds: 0.101196 for ../datasets/dataset_8285706.txt
+Time in Seconds: 0.121751 for ../datasets/dataset_11320749.txt
+Time in Seconds: 0.128661 for ../datasets/dataset_12154329.txt
+Time in Seconds: 0.15159 for ../datasets/dataset_15714072.txt
+Time in Seconds: 0.177474 for ../datasets/dataset_19403505.txt
+Time in Seconds: 0.182672 for ../datasets/dataset_20000000.txt
+Time in Seconds: 0.255707 for ../datasets/dataset_30000000.txt
+Time in Seconds: 0.323174 for ../datasets/dataset_40000000.txt
+Time in Seconds: 0.396303 for ../datasets/dataset_50000000.txt
+Time in Seconds: 0.468183 for ../datasets/dataset_60000000.txt
+Time in Seconds: 0.60892 for ../datasets/dataset_80000000.txt
+Time in Seconds: 0.750719 for ../datasets/dataset_100000000.txt
+
+########################################################################
+# Colfax Cluster
+# End of output for job 115961.c008
+# Date: Sat May 30 20:58:30 PDT 2020
+########################################################################
+
