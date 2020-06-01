@@ -157,11 +157,20 @@ Una vez realizada la implementación y probada su correcta ejecución se pasó a
 
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/OpenMP%20Hilos.png)
 
-Ya que la creación y sincronización de hilos toma cierto tiempo, en datasets pequeños en lugar de reducir el tiempo de ejecución lo extiende. Esto se evidencia en la siguiente tabla de Speedup con 64 hilos (mejor caso), el cual en el dataset más pequeño es menor a 1 y en el más grande es de 23. Sin embargo, en los datasets más grandes se llega a una reducción de un 95% respecto a la mejor versión serial de C++ y considerando que los tiempos de ejecución para todos los datasets son menores a 1 segundo, se considera una mejora significativa.
+Ya que la creación y sincronización de hilos toma cierto tiempo, en datasets pequeños en lugar de reducir el tiempo de ejecución lo extiende. Esto se evidencia en la siguiente tabla de Speedup con 64 hilos (mejor caso), el cual en el dataset más pequeño es menor a 1 y en el más grande es de 23. Sin embargo, en los datasets más grandes se llega a una reducción de un 95% respecto a la mejor versión serial de C++ y considerando que los tiempos de ejecución para todos los datasets son menores a 1 segundo, se considera una mejora significativa en términos de rapidez, sin embargo en términos de costos, la cantidad de hilos o procesadores no generan un speedup tan significativo entre más de ellos existen, por lo que se puede ver que la eficiencia decae a medida que estos aumentan.
 
-| Hilos  |SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio | Eficiencia promedio|
+| Hilos  |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio | Eficiencia promedio|
 |---|---|---|---|---|
-| 64 |  4.47E-04 | 23.84052513  | 6.27  | 9.79E-02 |
+| 1 |  6.36E-04 | 1.825154033  | 0.71  | 0.71 |
+| 2 |  6.04E-04 | 1.826315382 | 1.15 | 0.58 |
+| 4 |  6.06E-04 | 3.534003101 | 1.97  | 0.49 |
+| 8 |  5.89E-04| 6.62645152 | 3.12  | 0.39 |
+| 16 |  5.57E-04 | 11.79605234 |4.59  | 0.29 |
+| 32 |  4.54E-04 | 18.29162217  | 5.89 | 0.18 |
+| 64 |  4.47E-04 | 23.84052513  | 6.27  | 0.10 |
+| 128 |  3.21E-04| 21.6585717 | 5.28  | 0.04 |
+| 256 |  2.04E-04 | 14.53187646  | 3.44 | 0.01 |
+| 512 |  1.14E-04 | 8.261535888 |   1.87    | 0.00  |
 
 Los tiempos de ejecución de diferentes cantidades de hilos, así como el cálculo de sus Speedup y eficiencia se encuentra en el archivo Excel en la hoja Hilos OpenMP.
 
