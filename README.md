@@ -100,7 +100,7 @@ En esta versión se obtuvieron resultados muy similares al script 5 de Python, e
 
 En esta versión se buscó implementar una solución secuencial utilizando dos ciclos, uno para encontrar el reverso y otro para el complemento. Para esto se implementaron dos métodos a parte y se llamaron de manera independiente con la misma secuencia de entrada.
 
-Al ejecutar esta segunda versión se logró rebasar los tiempos de la mejor versión de Python, logrando leer el archivo de 100 millones de registros en 2.7 segundos, reduciendo el tiempo en aproximadamente un 45%.
+Al ejecutar esta segunda versión se logró rebasar los tiempos de la mejor versión de Python, logrando leer el archivo de 100 millones de registros en 2.7 segundos, reduciendo el tiempo en aproximadamente un 43%.
 
 ### Tercera versión
 
@@ -115,13 +115,13 @@ Por ejemplo, para reversar la cadena 'ACGAT':
   
 Obteniendo como cadena resultante 'ATCGT'  
 
-Una vez implementado este algoritmo, se tomaron tiempos y se logró procesar la cadena de 100 millones de registros en 2.12 segundos, reduciendo el tiempo de ejecución aproximadamente en un 22% con respecto a la versión 2 y un 67% respecto a la versión original de Python. 
+Una vez implementado este algoritmo, se tomaron tiempos y se logró procesar la cadena de 100 millones de registros en 2.12 segundos, reduciendo el tiempo de ejecución aproximadamente en un 23% con respecto a la versión 2 y un 56% respecto a la versión original de Python. 
 
 ### Comparación
 
 A continuación, se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución.
 
-| Versión  |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio |
+| Versión C++ |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio |
 |---|---|---|---|
 | 1  | 9.114599146  |0.2433419855 | 1.237328466  |
 | 2 |  68.96 | 1.756267087  | 9.43  |
