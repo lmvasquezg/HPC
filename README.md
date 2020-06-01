@@ -200,7 +200,7 @@ Siguiendo el diseño realizado, se inicializó MPI y se crearon barreras para as
 
 Una vez inicializados estos tres apuntadores se utiliza el método *MPI_Gatherv* que se encarga de reunir todas las cadenas a través de los procesos que están corriendo. Después de esto se procede a escribir la respuesta en el archivo de salida y a liberar los apuntadores.
 
-Ya terminada la implementación se procedió a realizar pruebas usando la versión de varios procesos con un único hilo para cada uno y se llegó a la conclusión de que entre más procesos mayor optimización, logrando una reducción con 4 procesos del 44% respecto a la mejor versión serial de C++, sin embargo, debido a que el Cluster sólo permitía 4 nodos máximo, se podrían hacer experimentos en máquinas más grandes para analizar el comportamiento de MPI con más cantidades de nodos.
+Ya terminada la implementación se procedió a realizar pruebas usando la versión de varios procesos con un único hilo para cada uno y se llegó a la conclusión de que entre más procesos mayor optimización, logrando una reducción con 4 procesos del 41% respecto a la mejor versión serial de C++, sin embargo, debido a que el Cluster sólo permitía 4 nodos máximo, se podrían hacer experimentos en máquinas más grandes para analizar el comportamiento de MPI con más cantidades de nodos.
 
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/MPI%20en%20diferentes%20nodos.png)
 
@@ -211,9 +211,37 @@ Ya terminada la implementación se procedió a realizar pruebas usando la versi�
 | 3 |  1.85E-01 | 1.56137204 | 1.31 | 0.44 |
 | 4 |  2.52E-01 | 1.710504063 | 1.42  | 0.35 |
 
+Posteriormente, se procedió a realizar una versión hibrida que incluyera la mejor cantidad de procesos para MPI (2 y 4) y la mejor cantidad de hilos para OpenMP (32, 64 y 128). Al ejecutarlo no se obtuvieron mejores resultados que en la versión aislada de OpenMP debido a que la penalización por la creación y sincronización de hilos se multiplica por cada proceso y, además la comunicación entre estos también ralentiza los resultados, por esto es por lo que la versión con dos nodos, sin importar la cantidad de hilos, es más rápida que la versión con cuatro nodos. Además, en el cálculo de la eficiencia, a pesar de que 4 nodos con 64 hilos y 2 nodos con 128 hilos tienen la cantidad de tareas (256) es más eficiente la versión con dos nodos por lo ya descrito. Se concluye así que las versiones híbridas no son favorables para la solución del problema.
+
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Versi%C3%B3n%20h%C3%ADbrida%20.png)
 
-Posteriormente, se ejecutaron pruebas usando la versión de varios procesos con la versión de memoria compartida en cada uno de estos
+| Nodos - Hilos  |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio | Eficiencia promedio|
+|---|---|---|---|---|
+| 2 - 32 |  5.90E-04 | 3.868141354 |1.92 | 0.0299715104 |
+| 2 - 64 | 2.35E-04| 3.910077154 | 1.86| 0.0145402755 |
+| 2 - 128 |  3.47E-04| 3.779573097 | 1.66| 0.0064714946 |
+| 4 - 32 |  4.38E-04 | 2.865532659 | 1.56  | 0.0121762824 |
+| 4 - 64 |  3.64E-04 | 2.879900964 | 1.50 | 0.0058520181 |
+| 4 - 128 |  3.12E-04 | 2.779300788 | 1.35  | 0.0026339657 |
+					
+Para los tiempos de ejecución, cálculo de speedup y eficiencia con cada dataset remítase al documento Excel.
+
+## 11. Conclusiones
+
+* En el caso del complemento reverso de una cadena de ADN la mejor alternativa es la versión de OpenMP con un tiempo de 0.089 segundos para 100 millones de registros, siendo superior a la versión serial de C++ que obtuvo 2.12 segundos, la versión aislada de MPI de 1.24 segundos y la híbrida de 0.54 segundos para la misma cantidad de datos.
+  
+![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Resultados%20finales%20.png)
+  
+* Con este proyecto quedo claro que mayor cantidad de hilos no necesariamente significa mejores resultados ya que si se tiene un número muy grande de estos la comunicación y sincronización entre ellos alenta el proceso.
+* Las versiones aisladas de OpenMP y OpenMPI suelen ser más rápidas y eficientes que las versiones híbridas.
+* Los lenguajes compilados y que no requieran de máquina virtual siempre serán más rápidos que los interpretados que la requieren.
+* Los resultados dependen de la máquina e infraestructura en la que se ejecutan los programas.
+* Es más favorable para el rendimiento tener un solo ciclo con instrucciones complejas que varios con instrucciones sencillas.
+* La utilización de la paralelización ayuda a la optimización de los procesos para un número muy grande de datos pero si se tienen pocos datos es menos eficiente, por lo que se debe tener un alto cuidado con la cantidad de datos que utilizará el cliente ya que es basado en esto que se debe fijar la optimización.
+
+## 12. Sustentación
+
+[VIDEOS]
 
 ## Referencias
 
