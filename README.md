@@ -119,7 +119,7 @@ Una vez implementado este algoritmo, se tomaron tiempos y se logró procesar la 
 
 ### Comparación
 
-A continuación, se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución.
+A continuación, se muestran las comparaciones entre las versiones de C++ realizadas y entre las mejores versiones de cada lenguaje, demostrando así que solo un cambio en el lenguaje seleccionado puede reducir significativamente los tiempos de ejecución. Esto se evidencia en la tabla de SpeedUp, donde se ve que la mejor versión de C++ reduce a más de la mitad el tiempo de ejecución de la mejor versión de Python.
 
 | Versión C++ |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio |
 |---|---|---|---|
@@ -129,6 +129,8 @@ A continuación, se muestran las comparaciones entre las versiones de C++ realiz
 
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Different%20C%2B%2B%20versions.png)
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Best%20C%2B%2B%20vs%20Python.png)
+
+El SpeedUp para cada dataset, los tiempos detallados y demás cálculos se encuentra en el documento Excel.En el caso de la versión Serial no aplica eficiencia.
 
 ## 10. Versión paralelizada
 
@@ -155,7 +157,13 @@ Una vez realizada la implementación y probada su correcta ejecución se pasó a
 
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/OpenMP%20Hilos.png)
 
-Ya que la creación y sincronización de hilos toma cierto tiempo, en datasets pequeños en lugar de reducir el tiempo de ejecución lo extiende. Sin embargo, en los datasets más grandes se llega a una reducción de un 96% respecto a la mejor versión de C++ y considerando que los tiempos de ejecución para todos los datasets son menores a 1 segundo, se considera una mejora significativa.
+Ya que la creación y sincronización de hilos toma cierto tiempo, en datasets pequeños en lugar de reducir el tiempo de ejecución lo extiende. Esto se evidencia en la siguiente tabla de Speedup con 64 hilos (mejor caso), el cual en el dataset más pequeño es menor a 1 y en el más grande es de 23. Sin embargo, en los datasets más grandes se llega a una reducción de un 95% respecto a la mejor versión serial de C++ y considerando que los tiempos de ejecución para todos los datasets son menores a 1 segundo, se considera una mejora significativa.
+
+| Hilos  |SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio | Eficiencia promedio|
+|---|---|---|---|---|
+| 64 |  4.47E-04 | 23.84052513  | 6.27  | 9.79E-02 |
+
+Los tiempos de ejecución de diferentes cantidades de hilos, así como el cálculo de sus Speedup y eficiencia se encuentra en el archivo Excel en la hoja Hilos OpenMP.
 
 ### Versión OpenMPI
 
