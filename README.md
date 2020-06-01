@@ -140,6 +140,22 @@ Se realizó el diseño de dos algoritmos paralelos, uno utilizando OpenMP y otro
 
 Diríjase a la [sección de compilación y ejecución serial](#compilación-y-ejecución) y siga las instrucciones allí descritas. El Makefile y el launch_script de las versiones paralelizadas contiene los flags y comandos necesarios para la compilación y ejecución de estas nuevas versiones.
 
+Para correr con diferentes cantidades de hilos cambie en el archivo main.cpp la siguiente línea y compile antes de ejecutar:
+````c++
+omp_set_num_threads(numero_hilos);  
+````
+
+En el caso de OpenMPI, para cambiar la cantidad de procesos solo es necesario cambiar en el launch_script la cantidad de nodos a pedir al manejador de recursos:
+
+````bash
+#PBS -l nodes=<num_nodos>:knl7210 
+````
+Por último, si desea poner un nombre específico al trabajo a ejecutar cambie la siguiente línea en el launch_script:
+
+````bash
+#PBS -N <nombre>
+````
+
 ### Versión OpenMP
 
 Siguiendo el diseño realizado se agregó el siguiente código antes del ciclo:
@@ -184,9 +200,17 @@ Siguiendo el diseño realizado, se inicializó MPI y se crearon barreras para as
 
 Una vez inicializados estos tres apuntadores se utiliza el método *MPI_Gatherv* que se encarga de reunir todas las cadenas a través de los procesos que están corriendo. Después de esto se procede a escribir la respuesta en el archivo de salida y a liberar los apuntadores.
 
-Ya terminada la implementación se procedió a realizar pruebas usando la versión de varios procesos con un único hilo para cada uno y se llegó a la conclusión de que entre más procesos mayor optimización, logrando una reducción con 4 procesos del 44% respecto a la mejor versión serial de C++.
+Ya terminada la implementación se procedió a realizar pruebas usando la versión de varios procesos con un único hilo para cada uno y se llegó a la conclusión de que entre más procesos mayor optimización, logrando una reducción con 4 procesos del 44% respecto a la mejor versión serial de C++, sin embargo, debido a que el Cluster sólo permitía 4 nodos máximo, se podrían hacer experimentos en máquinas más grandes para analizar el comportamiento de MPI con más cantidades de nodos.
 
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/MPI%20en%20diferentes%20nodos.png)
+
+| Nodos  |  SpeedUp dataset 804 | Speedup dataset 100 M  |  Speedup promedio | Eficiencia promedio|
+|---|---|---|---|---|
+| 1 |  2.91E-01 | 0.9206625112 | 0.83  | 0.83 |
+| 2 | 1.70E-01| 1.328889 | 1.09 | 0.55 |
+| 3 |  1.85E-01 | 1.56137204 | 1.31 | 0.44 |
+| 4 |  2.52E-01 | 1.710504063 | 1.42  | 0.35 |
+
 ![alt text](https://github.com/lmvasquezg/HPC/blob/master/graphs/Versi%C3%B3n%20h%C3%ADbrida%20.png)
 
 Posteriormente, se ejecutaron pruebas usando la versión de varios procesos con la versión de memoria compartida en cada uno de estos
