@@ -10,7 +10,7 @@ Luisa María Vásquez Gómez - lmvasquezg@eafit.edu.co
 
 **Carpeta drive del proyecto:** https://drive.google.com/open?id=13yMcErda4r12TWZlx4dcpoNpck-iQfd5
 
-Los cálculos detallados y toma de tiempos en Excel se encuentran dentro de la carpeta de drive.
+La toma de tiempos y cálculos detallados de speedup y eficiencia en Excel se encuentran dentro de la carpeta de drive.
 
 ## 2. Ideas preliminares
 
