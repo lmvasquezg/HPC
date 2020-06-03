@@ -242,7 +242,7 @@ Para los tiempos de ejecución, cálculo de speedup y eficiencia con cada datase
 ## 12. Sustentación
 
 Isabela: https://drive.google.com/file/d/1UBuxENRqT09Ei5cp86Hz4zo9kWHztD1D/view?usp=sharing
-Luisa: [VIDEO]
+Luisa: https://web.microsoftstream.com/video/daf64868-26b3-491d-9b8a-dd6ed0c50d21
 
 ## Referencias
 
