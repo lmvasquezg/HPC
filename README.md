@@ -241,7 +241,8 @@ Para los tiempos de ejecución, cálculo de speedup y eficiencia con cada datase
 
 ## 12. Sustentación
 
-[VIDEOS]
+Isabela: https://drive.google.com/file/d/1UBuxENRqT09Ei5cp86Hz4zo9kWHztD1D/view?usp=sharing
+Luisa: [VIDEO]
 
 ## Referencias
 
