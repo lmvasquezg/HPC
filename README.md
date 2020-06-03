@@ -245,7 +245,7 @@ Para los tiempos de ejecución, cálculo de speedup y eficiencia con cada datase
 
 Isabela: https://drive.google.com/file/d/1UBuxENRqT09Ei5cp86Hz4zo9kWHztD1D/view?usp=sharing
 
-Luisa: https://drive.google.com/file/d/1IgFRibLzVLZJ6tvWjGkxBQ62rMEaLSLr/view?usp=sharing
+Luisa: https://youtu.be/7tarc-1KIjU
 
 ## Referencias
 
