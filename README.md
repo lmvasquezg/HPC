@@ -10,6 +10,8 @@ Luisa María Vásquez Gómez - lmvasquezg@eafit.edu.co
 
 **Carpeta drive del proyecto:** https://drive.google.com/open?id=13yMcErda4r12TWZlx4dcpoNpck-iQfd5
 
+Los cálculos detallados y toma de tiempos en Excel se encuentran dentro de la carpeta de drive.
+
 ## 2. Ideas preliminares
 
 Con los avances de la computación en los últimos años, se han desarrollado arquitecturas que permiten representar situaciones de la vida real y mediante estas analizar y dar soluciones a problemas complejos. Gracias a la creación de supercomputadores y herramientas de paralelización se ha podido avanzar a gran escala en diferentes campos de la ciencia que requieren de simulaciones extensas y complicadas tales como la geología, biología, química farmacéutica, entre otros.
@@ -242,7 +244,8 @@ Para los tiempos de ejecución, cálculo de speedup y eficiencia con cada datase
 ## 12. Sustentación
 
 Isabela: https://drive.google.com/file/d/1UBuxENRqT09Ei5cp86Hz4zo9kWHztD1D/view?usp=sharing
-Luisa: https://web.microsoftstream.com/video/daf64868-26b3-491d-9b8a-dd6ed0c50d21
+
+Luisa: https://web.microsoftstream.com/video/7f865ef3-bf19-4533-9941-92302ae6fd31
 
 ## Referencias
 
